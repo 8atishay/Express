@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Hello From EJS application</h2>
+    <p>This is my first EJS configuration</p>
+
+    <h2>EJS Variables</h2>
+    <div>
+        <%= message %>
+        <%= 5+5 %>   
+    </div>
+
+    <h2>Conditional Constructs</h2>
+    <div>
+<!-- to append any html element along with json object 
+    1 close the template tag
+    2 append html
+    3 again open template then close-->
+        <% if(message=="Hello World") { %>
+            <p>Good</p>
+        <%} %>
+    </div>
+
+    <h2>Looping Constructs</h2>
+    <div>
+        <ul>
+            <% for(var i=0;i<people.length; i++){%>
+                <li>
+                    <%= people[i] %>
+                </li>
+            <% } %>
+        </ul>
+    </div>
+
+    <h2>EJS loop through array of objects</h2>
+    <!-- <table style="border: 1px black solid; padding: 10px;" > -->
+        <table border="1" cellspacing="0" cellpadding="10">        
+        <tbody>
+            <% for(var i=0; i<data.length; i++){ %>
+                <tr>
+                    <td>
+                        <%= data[i].id %>
+                    </td>
+                    <td>
+                        <%= data[i].name %>
+                    </td>
+                </tr>
+            <% } %>
+        </tbody>
+    </table>
+
+
+</body>
+</html>

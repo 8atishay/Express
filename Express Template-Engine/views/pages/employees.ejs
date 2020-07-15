@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <%- include ("../partials/head") %>
+    </head>
+    <body class="container">
+        <header>
+            <%- include ("../partials/header") %>
+        </header>
+        <main>
+            <div class="jumbotron">
+                <h2>Employees Details</h2>
+                <div class="list-group">
+                    <% employees.forEach((emp)=>{ %>
+                        <a href="/emp/<%= emp.empID %>" class="list-group-item">
+                            <h4 class="list-group-item-heading">
+                                <%= emp.empDesignation %>
+                            </h4>
+                            <p class="list-group-item-text">
+                                <%= emp.empName %>
+                            </p>
+                        </a>
+                    <% }) %>
+
+                </div>
+            </div>
+        </main>
+        <footer>
+            <%- include ("../partials/footer") %>
+        </footer>
+    </body>
+</html>
